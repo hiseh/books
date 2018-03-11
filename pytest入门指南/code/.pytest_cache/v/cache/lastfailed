@@ -1,5 +1,0 @@
-{
-  "test_class.py::TestClass::()::test_two": true,
-  "test_sample.py::test_answer": true,
-  "test_tmpdir.py::test_needsfiles": true
-}
