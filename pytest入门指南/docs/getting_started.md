@@ -1,5 +1,4 @@
 # 开始使用
-pytest is a framework that makes building simple and scalable tests easy. Tests are expressive and readable—no boilerplate code required. Get started in minutes with a small unit test or complex functional test for your application or library.
 pytest能够创建简单和可伸缩的测试应用框架，而不是单纯的套用模板代码。阅读本章后，你花几分钟时间就能为你的应用或代码库创建好一个小单元测试或复合功能测试。
 ## 安装pytest
 1. 在命令行中执行一下命令：
