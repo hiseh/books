@@ -2,17 +2,17 @@
 pytest is a framework that makes building simple and scalable tests easy. Tests are expressive and readable—no boilerplate code required. Get started in minutes with a small unit test or complex functional test for your application or library.
 pytest能够创建简单和可伸缩的测试应用框架，而不是单纯的套用模板代码。阅读本章后，你花几分钟时间就能为你的应用或代码库创建好一个小单元测试或复合功能测试。
 ## 安装pytest
-0. 在命令行中执行一下命令：
+1. 在命令行中执行一下命令：
 ```sh
 pip install -U pytest
 ```
-0. 检查安装版本
+2. 检查安装版本
 ```sh
 $ pytest --version
 This is pytest version 3.x.y, imported from $PYTHON_PREFIX/lib/python3.5/site-packages/pytest.py
 ```
 ## 创建第一个测试
-四行代码就可以创建一个简单测试函数。
+四行代码就可以创建一个简单测试函数。
 ```py
 def func(x):
     return x + 1
