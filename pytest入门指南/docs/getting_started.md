@@ -120,4 +120,4 @@ PYTEST_TMPDIR/test_needsfiles0
 1 failed in 0.04 seconds
 ```
 更多tmpdir信息，请参见[临时目录和文件](https://docs.pytest.org/en/latest/tmpdir.html#tmpdir-handling)。
-执行`pytest --fixtures`查看所有内置和可定制的[pytest 组件](https://docs.pytest.org/en/latest/fixture.html#fixtures)
+执行`pytest --fixtures`查看所有内置和可定制的[pytest 参数](https://docs.pytest.org/en/latest/fixture.html#fixtures)
