@@ -12,7 +12,7 @@ python -m pytest [...]
 运行`pytest`会得到六种可能的结束编码。
 
 - **Exit code 0**  所有测试都被收集到，并且全部运行通过
-- **Exit code 1**  所有测试都被收集到，全部运行，但某些测试未通过
+- **Exit code 1**  所有测试都被收集到，全部运行，但某些测试未通过
 - **Exit code 2**  用户终止测试
 - **Exit code 3**  当执行测试时发生内部错误
 - **Exit code 4**  pytest命令行调用错误
@@ -75,7 +75,7 @@ pytest --tb=no      # 全部不打印
 ```
 `--full-trace`会打印非常长的信息（比`--tb=long`还长）。它也会确保打印时可被键盘终止（Ctrl + c），这点在遇到超长信息是很有用。默认的，pytest不会输出任何追溯信息（因为pytest会触发键盘终止），只有手工打开打印追溯信息选项后，才能使用这个功能。
 ## 失败时调用PDB（Python Debugger）
-Python自带一个内置的调试器，叫PDB。通过命令行参数，`pytest`可以让失败测试直接进入PDB。
+Python自带一个内置的调试器，叫PDB。通过命令行参数，`pytest`可以让失败测试直接进入PDB。
 ```sh
 pytest --pdb
 ```
