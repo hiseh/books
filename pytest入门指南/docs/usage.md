@@ -1,6 +1,7 @@
 # 常规用法
 ## 通过python -m pytest调用
 *v2.0+*
+
 可以通过命令行中Python命令调用测试：
 ```sh
 python -m pytest [...]
@@ -108,6 +109,7 @@ pytest --durations=N
 ```
 ## 创建JUnitXML格式的文件
 *v3.1+*
+
 用下列调用方式，创建能被[Jenkins](http://jenkins-ci.org/)等持续集成服务读取的结果文件：
 ```sh
 pytest --junitxml=path
@@ -116,4 +118,51 @@ pytest --junitxml=path
 ```ini
 [pytest]
 junit_suite_name = my_suite
+```
+### record_xml_property
+*v2.8+*
+
+使用`record_xml_property`特性记录测试额外信息。
+```py
+def test_function(record_xml_property):
+    record_xml_property("example_key", 1)
+    assert 0
+```
+可以将扩展属性`example_key="1"`加到生成的`testcase`元素中。
+```xml
+<testcase classname="test_function" file="test_function.py" line="0" name="test_function" time="0.0009">
+  <properties>
+    <property name="example_key" value="1" />
+  </properties>
+</testcase>
+```
+### record_xml_attribute
+*v3.4+*
+
+使用`record_xml_attribute`可以向`testcase`元素增加新的xml属性，也可以覆盖已存在值。
+```py
+def test_function(record_xml_attribute):
+    record_xml_attribute("assertions", "REQ-1234")
+    record_xml_attribute("classname", "custom_classname")
+    print('hello world')
+    assert True
+```
+不像`record_xml_property`，上面代码不会增加子元素，而是增加一个属性：`assertions="REQ-1234"`，并且用`classname=custom_classname`覆盖掉默认的`classname`。
+```xml
+<testcase classname="custom_classname" file="test_function.py" line="0" name="test_function" time="0.003" assertions="REQ-1234">
+    <system-out>
+        hello world
+    </system-out>
+</testcase>
+```
+## Python代码中调用pytest
+*v2.0+*
+
+直接在Python中调用pytest：
+```py
+pytest.main()
+```
+效果与命令行调用一致，只不过不会抛出`SystemExit`，而是返回结束代码。也可以传递参数：
+```py
+pytest.main(['-x', 'mytestdir'])
 ```
