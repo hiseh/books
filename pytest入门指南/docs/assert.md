@@ -30,4 +30,87 @@ def test_special_answer():
 ```
 详细信息请查看[高级断言检查](#高级断言检查)
 ## 检查预期的异常
+我们可以用`pytest.raises`作为上下文管理，来检查抛出的异常：
+```py
+def func_exce(x):
+    if x & 1 != 0:
+        raise TypeError
+    return 0
+
+def test_1_TypeError():
+    with pytest.raises(TypeError):
+        func_exce(1)
+
+def test_0_TypeError():
+    with pytest.raises(TypeError):
+        func_exce(0)
+```
+第一条测试能通过，而第二条测试会报告`Failed: DID NOT RAISE <class 'TypeError'>`，符合我们的预期。此外，我们还可以获取运行中生成的异常信息：
+```py
+def test_recursion_depth():
+    with  pytest.raises(RuntimeError) as e:
+        def f():
+            f()
+        f()
+    assert 'maximum recursion' in str(e.value)
+```
+`e`是`ExceptionInfo`实例，封装了运行中抛出的异常信息，主要用它三个属性：`.type`，`.value`和`.traceback`。
+*v3.0+*
+
+pytest可以用`message`参数定制异常信息, ：
+```py
+>>> with raises(ValueError, message="预期的ValueError"):
+...    pass
+... Failed: 预期的ValueError
+```
+此外，还可以将raises作为参数传递给`pytest.mark.xfail`装饰器，用来检查更具体的测试失败方式，而不是抛出任何异常。它更像描述**应该**发生的异常。
+```py
+@pytest.mark.xfail(raises=IndexError)
+def test_f():
+    f()
+```
+```sh
+h$ pytest -q test_sample.py::test_f
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________________________________ test_f ____________________________________
+
+    @pytest.mark.xfail(raises=IndexError)
+    def test_f():
+>       f()
+
+test_sample.py:28:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def f():
+>       raise SystemExit(1)
+E       SystemExit: 1v
+
+test_sample.py:5: SystemExit
+1 failed in 0.05 seconds
+```
+`pytest.raises`更适合用来测试自家代码主动抛出的异常，而用`@pytest.mark.xfail`装饰检查函数，更方便记录未修复的bug或依赖代码中的bug。
+在上下文管理中用`match`可以通过正则表达式检查异常描述信息是否匹配我们的预期（类似Python官方`unittest`库中的`TestCase.assertRaisesRegexp`方法）：
+```py
+def special_func():
+    raise ValueError("异常信息：123")
+
+def test_match():
+    with pytest.raises(ValueError, match=r'.*123$'):
+        special_func()
+```
+```sh
+$ pytest -q test_sample.py::test_match
+.                                                                        [100%]
+1 passed in 0.01 seconds
+```
+`match`参数调用的正则表达式规则与`re.search`一致。
+## 检查预期的警告
+*v2.8+*
+
+通过[`pytest.warns`](https://docs.pytest.org/en/latest/warnings.html#warns)检查代码中抛出的特定警告信息。
+## 编写上下文敏感的比较
+*v2.0+*
+
+
 ## 高级断言检查
