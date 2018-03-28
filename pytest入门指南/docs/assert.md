@@ -112,5 +112,45 @@ $ pytest -q test_sample.py::test_match
 ## 编写上下文敏感的比较
 *v2.0+*
 
+作比较时，`pytest`可以提供丰富的上下文敏感信息，比如；
+```py
+def test_set_comparison():
+    set1 = set("1308")
+    set2 = set("8035")
+    assert set1 == set2
+```
+运行一下：
+```sh
+$ pytest -q test_sample.py::test_set_comparison
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________________________ test_set_comparison ______________________________
 
+    def test_set_comparison():
+        set1 = set("1308")
+        set2 = set("8035")
+>       assert set1 == set2
+E       AssertionError: assert {'0', '1', '3', '8'} == {'0', '3', '5', '8'}
+E         Extra items in the left set:
+E         '1'
+E         Extra items in the right set:
+E         '5'
+E         Full diff:
+E         - {'1', '3', '0', '8'}
+E         ?   ^...
+E
+E         ...Full output truncated (3 lines hidden), use '-vv' to show
+
+test_sample.py:55: AssertionError
+1 failed in 0.04 seconds
+```
+结果中说明了所有比较实例：
+- 比较字符串：显示不同的内容
+- 比较列表：第一个不同的索引
+- 比较字典：不同的实体
+更多实例请查看[Demo](https://docs.pytest.org/en/latest/example/reportingdemo.html#tbreportdemo)。
+## 定义自己的比较判断
+实现`pytest_assertrepr_compare`
+>**pytest_assertrepr_compare(config, op, left, right)**
+>返回
 ## 高级断言检查

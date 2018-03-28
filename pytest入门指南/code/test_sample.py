@@ -48,3 +48,8 @@ def special_func():
 def test_match():
     with pytest.raises(ValueError, match=r'.*123$'):
         special_func()
+
+def test_set_comparison():
+    set1 = set("1308")
+    set2 = set("8035")
+    assert set1 == set2
