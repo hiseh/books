@@ -152,5 +152,64 @@ test_sample.py:55: AssertionError
 ## 定义自己的比较判断
 实现`pytest_assertrepr_compare`
 >**pytest_assertrepr_compare(config, op, left, right)**
->返回
+><br/>返回失败的断言表达式说明<br/>
+>如果没有自定义说明返回*None*，否则返回字符串列表。字符串列表可以包含多行文字，不过返回时换行符会被去掉。此外第一行会缩进显示，因此建议第一行显示摘要文字。<br/>
+> **参数：**config (_pytest.config.Config) – pytest配置对象
+下面是一个实例，在[configtest.py](https://docs.pytest.org/en/latest/fixture.html#conftest-py)中增加一个钩子，比较Foo对象时提供额外的比较信息。
+```py
+class Foo(object):
+    def __init__(self, val):
+        self.val = val
+
+    def __eq__(self, other):
+        return self.val == other.val
+
+def test_compare():
+    f1 = Foo(1)
+    f2 = Foo(2)
+    assert f1 == f2
+```
+如果不实用自定义的比较判断，测试结果如下：
+```sh
+$ pytest -q test_foocompare.py
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________________________ test_compare _________________________________
+
+    def test_compare():
+        f1 = Foo(1)
+        f2 = Foo(2)
+>       assert f1 == f2
+E       assert <test_foocompare.Foo object at 0x1054e0198> == <test_foocompare.Foo object at 0x1054e0278>
+
+test_foocompare.py:11: AssertionError
+1 failed in 0.04 seconds
+```
+增加自定义的configtest.py文件：
+```py
+from test_foocompare import Foo
+def pytest_assertrepr_compare(op, left, right):
+    if isinstance(left, Foo) and isinstance(right, Foo) and op == "==":
+        return ['比较 Foo 实例:',
+                '   值: %s != %s' % (left.val, right.val)]
+```
+再次执行测试，结果如下：
+```sh
+$ pytest -q test_foocompare.py
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________________________ test_compare _________________________________
+
+    def test_compare():
+        f1 = Foo(1)
+        f2 = Foo(2)
+>       assert f1 == f2
+E       assert 比较 Foo 实例:
+E            值: 1 != 2
+
+test_foocompare.py:11: AssertionError
+1 failed in 0.04 seconds
+```
 ## 高级断言检查
+*v2.1+*
+
