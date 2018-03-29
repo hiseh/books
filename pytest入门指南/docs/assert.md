@@ -153,7 +153,7 @@ test_sample.py:55: AssertionError
 实现`pytest_assertrepr_compare`
 >**pytest_assertrepr_compare(config, op, left, right)**
 ><br/>返回失败的断言表达式说明<br/>
->如果没有自定义说明返回*None*，否则返回字符串列表。字符串列表可以包含多行文字，不过返回时换行符会被去掉。此外第一行会缩进显示，因此建议第一行显示摘要文字。<br/>
+>如果没有自定义说明返回*None*，否则返回字符串列表。字符串列表可以包含多行文字，不过返回时换行符会被去掉。此外第一行会缩进显示，因此建议第一行显示摘要文字。<br/>
 > **参数：** config (_pytest.config.Config) – pytest配置对象
 
 下面是一个实例，在[configtest.py](https://docs.pytest.org/en/latest/fixture.html#conftest-py)中增加一个钩子，比较Foo对象时提供额外的比较信息。
