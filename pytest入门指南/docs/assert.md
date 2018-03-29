@@ -150,7 +150,7 @@ test_sample.py:55: AssertionError
 - 比较字典：不同的实体
 更多实例请查看[Demo](https://docs.pytest.org/en/latest/example/reportingdemo.html#tbreportdemo)。
 ## 定义自己的比较判断
-实现`pytest_assertrepr_compare`
+实现`pytest_assertrepr_compare`钩子函数。
 >**pytest_assertrepr_compare(config, op, left, right)**
 ><br/>返回失败的断言表达式说明<br/>
 >如果没有自定义说明返回*None*，否则返回字符串列表。字符串列表可以包含多行文字，不过返回时换行符会被去掉。此外第一行会缩进显示，因此建议第一行显示摘要文字。<br/>
@@ -170,7 +170,7 @@ def test_compare():
     f2 = Foo(2)
     assert f1 == f2
 ```
-如果不实用自定义的比较判断，测试结果如下：
+如果不使用自定义的比较判断，测试结果如下：
 ```sh
 $ pytest -q test_foocompare.py
 F                                                                        [100%]
@@ -214,3 +214,12 @@ test_foocompare.py:11: AssertionError
 ## 高级断言检查
 *v2.1+*
 
+`pytest`通过重写断言，将检查信息加入失败信息中，来获取更详细的失败信息。`pytest`仅仅会重写测试收集进程收集到的测试模块，所以在不是自己测试模块里的断言不会被重写。
+> **注意：**<br/>
+> `pytest`会重写在`pyc`文件中导入的测试模块，多数这种重写是透明的，我们感觉不到，除非弄乱了自己的导入，钩子才会干涉导入。这种情况下我们有两种选择：
+>
+>- 在特定模块的注释文字中使用`PYTEST_DONT_REWRITE`关键字，来禁止重写。
+>- 使用`--assert=plain`来禁止重写所有模块。
+
+0. *v2.1* 推荐使用`--assert`，不再推荐`--no-assert`和`--nomagic`
+0. *v3.0* 禁用`--no-assert`、`--nomagic`和`--assert=reinterp`
