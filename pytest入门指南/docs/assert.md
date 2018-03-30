@@ -56,7 +56,8 @@ def test_recursion_depth():
 ```
 `e`是`ExceptionInfo`实例，封装了运行中抛出的异常信息，主要用它三个属性：`.type`，`.value`和`.traceback`。
 
-*v3.0+*：pytest可以用`message`参数定制异常信息, ：
+*v3.0+*<br/>
+pytest可以用`message`参数定制异常信息：
 ```py
 >>> with raises(ValueError, message="预期的ValueError"):
 ...    pass
