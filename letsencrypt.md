@@ -110,3 +110,13 @@ cat ${HOME}/lets-encrypt-x3-cross-signed.pem ${HOME}/isrgrootx1.pem > letsencryp
 openssl dhparam -out dhparam.pem 2048
 ```
 因为服务器性能一般，选择了2048位密钥，从安全角度，建议用4096位。
+
+# 自动续期
+虽然Let's Encrypt的证书有效期是三个月，但官方建议一天延期两次，原话是这样的：
+>Note:
+>
+>if you're setting up a cron or systemd job, we recommend running it twice per day (it won't do anything until your certificates are due for renewal or revoked, but running it regularly would give your site a chance of staying online in case a Let's Encrypt-initiated revocation happened for some reason). Please select a random minute within the hour for your renewal tasks.
+因为如果设定为90天，万一哪天你重启服务器，crontab没有及时执行，证书会过期。不过从我实际使用上来看，重启服务器是小概率事件，没必要这么频繁地申请延期。设定为5~30天一次就行了。
+```bash
+0 2 1 * * certbot renew --quiet --renew-hook "nginx -s reload" 
+```
