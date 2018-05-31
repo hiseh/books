@@ -68,8 +68,6 @@ dig -t txt _acme-challenge.<要申请的域名>
 - **chain.pem** README，上面说法是给nginx stapling用的，其实里面就是CA的证书；
 - **cert.pem** 公钥。
 
-虽然可以一次申请多个域名的证书，但只有第一个域名可以通过Chrome验证，访问后面域名时都会弹出安全警告，说这个证书依赖主域名。目前Let's Encrypt也没给出什么解决办法，因此稍微麻烦点，每个域名申请一个证书吧。
-
 ## 部署证书
 以Nginx为例，配置如下：
 ```nginx
