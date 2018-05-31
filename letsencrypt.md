@@ -15,7 +15,7 @@
 ## 申请证书
 说了半天，总算要步入正题了，在具体操作之前，介绍两种申请方式：
 
-0. 通过Let's Encrypt官方推荐的cerbot(https://github.com/certbot/certbot)客户端申请。
+0. 通过Let's Encrypt官方推荐的[cerbot](https://github.com/certbot/certbot)客户端申请。
 0. 通过第三方封装的Python脚本申请
 ### 使用cerbot申请
 0. 请确认已安装git
