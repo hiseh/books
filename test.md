@@ -16,6 +16,7 @@ https://api.ebizyun.com/user/40/info?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
 
 ## 返回值
 API网关返回类型：
+
 |错误原因|状态码<br/>信息|
 |:------|:------:|
 |未提供token|400|
