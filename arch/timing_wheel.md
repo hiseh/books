@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-05-06 10:43:05
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-05-18 22:36:39
+ * @LastEditTime: 2020-05-18 22:43:29
  * @Description: 时间轮定时器
  -->
 # 用时间轮实现一个高精度定时器
@@ -43,9 +43,9 @@ while True:
 ## 时间轮
 所谓时间轮其实就是一个存储了多个时间格的环形队列，一个时间轮结构如图所示：<br/>![单一时间轮](https://www.ibm.com/developerworks/aix/library/au-lowertime/fig1.gif)<br/>每个时间格代表当前时间轮的基本时间跨度，用*tickMs*表示。所有任务根据各自的超时时间，依次存放在对应的时间格中。时间轮包含的时间格数量或者说时间轮长度用*wheelSize*表示，因此时间轮总跨度就是*tickMs* x *wheelSize*，用*interval*表示。此外时间轮通常还用一个指针表示当前时间，一般用*currentTime*表示，因为时间轮最小的时间跨度是*tickMs*，所以*currentTime*一定是*tickMs*的整倍数。*currentTime*还将时间轮划分为到期部分和未到期两部分，*currentTime*当前指向的时间格属于到期部分，此时间格所对应的所有任务都需要做超时处理。
 
-实际应用中，为了保证时间轮精度，需要定一个很小的TickMs，此时如果整个定时器时间跨度较长，会造成时间轮长度过大。比如游戏中设定每隔1ms检查一次子弹轨迹，而一枚手雷扔出后要5秒才会爆炸，那么*TickMs*最大也不过是1ms，则整个时间轮至少需要`5000 ÷ 1 = 5000`个格子，64位系统上，光这5秒所需的时间轮就要占`5000 x 8 ÷ 1024 ≈ 40KB`内存，有点浪费内存，而且遍历一遍也会比较耗时。所以我们通常用多阶时间轮来满足高精度和长跨度清醒，如图所示（图片来自[朱小厮的博客](https://blog.csdn.net/u013256816/article/details/80697456)）：<br/>![多阶时间轮](https://img-blog.csdn.net/20180614194206760?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMyNTY4MTY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+实际应用中，为了保证时间轮精度，需要定一个很小的TickMs，此时如果整个定时器时间跨度较长，会造成时间轮长度过大。比如游戏中设定每隔1ms检查一次子弹轨迹，而一枚手雷扔出后要5秒才会爆炸，那么*TickMs*最大也不过是1ms，则整个时间轮至少需要`5000 ÷ 1 = 5000`个格子，64位系统里，光这5秒所需的指针数组就要占`5000 x 8 ÷ 1024 ≈ 40KB`内存，有点浪费内存，而且遍历一遍也会比较耗时。所以我们通常用多阶时间轮来满足高精度和长跨度场景，如图所示（图片来自[朱小厮的博客](https://blog.csdn.net/u013256816/article/details/80697456)）：<br/>![多阶时间轮](https://img-blog.csdn.net/20180614194206760?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMyNTY4MTY=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-设最低一层时间轮的*tickMs*为1ms，*wheelSize*为20，*interval*为20ms，并且高阶时间轮的*tickMs*为低阶时间轮的*interval*，所有时间轮的*wheelSize*都是固定的20个。初始指针*c<sub>1</sub>* = 0，同时插入一个超时时间为2ms的任务*t<sub>1</sub>*，自然*t<sub>1</sub>*会插入到第一层的第二个时间格*tw_a<sub>2</sub>*中。当*c<sub>1</sub>*指向*tw_a<sub>2</sub>*时，*t<sub>1</sub>*任务会过期。如果此时又来一个超时时间为8ms的任务*t<sub>2</sub>*，那么*t<sub>2</sub>*需要在当前时间基础上延迟8ms过期，所以*t<sub>2</sub>*会插入到*tw_a<sub>10</sub>*处。以上都是在同阶时间轮内操作，很好处理，如果*c<sub>1</sub>* = 10的时候，来了个超时时间是350ms的任务*t<sub>3</sub>*，该如何处理呢？
+设最低一层时间轮的*tickMs*为1ms，*wheelSize*为20，*interval*为20ms，并且高阶时间轮的*tickMs*为低阶时间轮的*interval*，所有时间轮的*wheelSize*都是固定的20个。初始指针**c<sub>1</sub>** = 0，同时插入一个超时时间为2ms的任务**t<sub>1</sub>**，自然**t<sub>1</sub>**会插入到第一层的第二个时间格**tw_a<sub>2</sub>**中。当**c<sub>1</sub>**指向**tw_a<sub>2</sub>**时，**t<sub>1</sub>**任务会过期。如果此时又来一个超时时间为8ms的任务**t<sub>2</sub>**，那么**t<sub>2</sub>**需要在当前时间基础上延迟8ms过期，所以**t<sub>2</sub>**会插入到**tw_a<sub>10</sub>**处。以上都是在同阶时间轮内操作，很好处理，如果**c<sub>1</sub>** = 10的时候，来了个超时时间是350ms的任务**t<sub>3</sub>**，该如何处理呢？
 
 显然此时第一层时间轮*tw_a*是没法满足了，我们看看第二层时间轮*tw_b*。*tw_b*的*tickMs*为*tw_a*的*interval*，即20ms。每一层时间轮的*wheelSize*是固定的，都是20，那么*tw_b*的*interval* = 400ms，完全可以存下*t<sub>3</sub>*。此时*c<sub>1</sub>* = 10，所以*tw_a*还剩 20 - 10 = 10ms，*tw_b*中需要寻找延迟时间是340ms的格子即可，最终*t<sub>3</sub>*存入*tw_b<sub>17</sub>*。
 
