@@ -11,7 +11,7 @@
 - DNS检验：Let's Encrypt生成一个随机字符串，我们把这个字符串添加为待绑定域名某个name的txt值，只要能通过公网上的DNS服务器解析到这个字符串，即可通过验证。
 
 从上面两种方式来看，当然URL验证更直观，易操作。但在国内，第一种方式只适用于已备案的网站，因为国内要求网站都必须先备案再发布。以阿里云为例，如果网站未备案或备案中，那网站的80口会被阿里劫持，将返回内容篡改成一个title为“TestPage”的提示页面：
-![温馨提示](./img/letsencrypt/aliyun_alt.png)
+![温馨提示](../img/letsencrypt/aliyun_alt.png)
 因此未备案的网站只能选择DNS检验方式。
 ## 申请证书
 说了半天，总算要步入正题了，在具体操作之前，介绍两种申请方式：
@@ -53,7 +53,7 @@ Press ENTER to continue
 这里以阿里云DNS为例，讲解如何实现DNS验证。
 
 0. 点击**添加记录**
-![添加记录](./img/letsencrypt/new_dns.png)
+![添加记录](../img/letsencrypt/new_dns.png)
 0. 保存后等上半分钟，然后执行
 ```bash
 dig -t txt _acme-challenge.<要申请的域名>
