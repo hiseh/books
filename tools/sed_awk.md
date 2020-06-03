@@ -277,7 +277,7 @@ $ sed '1!G;h;$!d' tt.txt
 1
 ```
 
-利用反复拷贝和覆盖pattern space及hold space的方式实现反序文件内容，最后把结果拷贝到pattern space中，让sed自动输出。流程图来自[酷壳](https://coolshell.cn)<br/>![流程图](https://coolshell.cn/wp-content/uploads/2013/02/sed_demo.jpg)<br/>*蓝色为pattern space，绿色为hold space*。
+利用反复拷贝和覆盖pattern space及hold space的方式实现反序文件内容，最后把结果拷贝到pattern space中，让sed自动输出。流程图来自[酷壳](https://coolshell.cn)<br/>![流程图](../img/tools/68747470733a2f2f636f6f6c7368656c6c2e636e2f77702d636f6e74656e742f75706c6f6164732f323031332f30322f7365645f64656d6f2e6a7067.jpeg)<br/>*蓝色为pattern space，绿色为hold space*。
 
 
 ## AWK
