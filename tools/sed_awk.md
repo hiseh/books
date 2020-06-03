@@ -34,19 +34,19 @@ sed "s/client's/my/g" test.txt
 
 > 来个实际的例子，比如说我们要统计某个目录下的文件类型，可以这么操作：find / -type f | sed 's/.*\.//' | sort -u
 
-上面的操作仅仅在终端打印了结果，但并没有改变文件内容，如果想保存结果，可以用重定向
+上面的操作仅仅在终端打印了结果，但并没有改变文件内容，如果想保存结果，可以用重定向：
 
 ```bash
 sed "s/client/browser/g" test.txt > result.txt
 ```
 
-或直接修改原始文件
+或直接修改原始文件：
 
 ```bash
 sed -i "s/client/browser/g" test.txt
 ```
 
-SED使用标准正则，想了解详细正则规范，可以参照[SED帮助](http://www.gnu.org/software/sed/manual/sed.html#Regular-Expressions-Overview)。继续举例子，比如我们想要在每行开头加点东西，可以这么做。
+SED使用标准正则，想了解详细正则规范，可以参照[SED帮助](http://www.gnu.org/software/sed/manual/sed.html#Regular-Expressions-Overview)。继续举例子，比如我们想要在每行开头加点东西，可以这么做：
 
 ```bash
 $ sed "s/^/- /g" test.txt
@@ -129,7 +129,7 @@ $ sed -e "s/i/I/2" -e "1s/0/*/3g" test.txt
 
 ### 提取变量
 
-比如我们想用[]括起来client的名字，可以使用`&`当作被匹配的变量：
+比如我们想用`[]`括起来client的名字，可以使用`&`当作被匹配的变量：
 
 ```bash
 $ sed 's/\<\w*\>$/[&]/g' test.txt
@@ -151,7 +151,7 @@ firefox
 w3m
 ```
 
-注意，括号必须用`\`转义，否则sed无法找到匹配内容，报`invalid reference`错误。
+注意，括号必须用`\`转义，否则sed无法找到匹配内容，报`invalid reference`错误。其实不只是圆括号，对于所有有特定正则含义的符号，我们都可以用`\`转义，以保证SED能正确执行。
 
 ### 常用参数
 
@@ -277,7 +277,7 @@ $ sed '1!G;h;$!d' tt.txt
 1
 ```
 
-利用反复拷贝和覆盖pattern space及hold space的方式实现反序文件内容，最后把结果拷贝到pattern space中，让sed自动输出。流程图来自[酷壳](https://coolshell.cn)<br/>![流程图](https://coolshell.cn/wp-content/uploads/2013/02/sed_demo.jpg)<br/>蓝色为pattern space，绿色为hold space。
+利用反复拷贝和覆盖pattern space及hold space的方式实现反序文件内容，最后把结果拷贝到pattern space中，让sed自动输出。流程图来自[酷壳](https://coolshell.cn)<br/>![流程图](https://coolshell.cn/wp-content/uploads/2013/02/sed_demo.jpg)<br/>*蓝色为pattern space，绿色为hold space*。
 
 
 ## AWK
@@ -289,7 +289,7 @@ AWK问世以来发展出多个版本，现如今我们常用的GAWK（GNU AWK）
 - 没有预定义的内存限制。
 - 可以使用特殊文件支持来访问标准的*NIX流。
 - 可以使用Lint检查。
-- 默认使用扩展的正则表达式。
+- 默认使用扩展的正则表达式 **ERE**。
 - 支持无限制的行长度和连续使用反斜杠字符。
 - 包含一些TCP/IP网络函数。
 
@@ -323,14 +323,14 @@ tcp 0.0.0.0:9002
 ...
 ```
 
-首先看第一行是怎么回事？看下文件，原来第一行不符合awk获取列的定义，可以用刚学的sed命令瞅一眼：
+首先看第一行是怎么回事？看下文件，原来第一行不符合awk获取列的定义，用刚学的sed命令瞅一眼：
 
 ```bash
 $ sed -n '1p' netstat.txt
 Active Internet connections (servers and established)
 ```
 
-这里我们可以结合sed，只处理从地二行开始的内容：
+这里我们可以结合sed，只处理从第二行开始的内容：
 
 ```bash
 $ sed -n '2,$p' netstat.txt | awk '{print $1, $4}'
@@ -437,7 +437,7 @@ Send-Q  	Foreign
 前面用`NR`来筛选特定的行，AWK有很多内置变量，我们常用的有：
 
 |变量|描述|
-|--------:|----------:|
+|:--------|:----------|
 |$0|当前记录（这个变量中存放着整个行的内容）。|
 |$1 ~ $n|当前记录的第n个字段，字段间由FS分隔。|
 |FS|输入字段分隔符，默认是空格或Tab。|
