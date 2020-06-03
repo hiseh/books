@@ -570,7 +570,7 @@ $ awk '$7 ~ /java/ {print $4,$5,$7}' OFS="\t" netstat.txt
 `~`是AWK的运算符，用来进行ERE（extended regular expression）匹配的。下面是AWK表达式优先级的一个排序表，基本和C语言一致：
 
 |语法|功能（🄲表示同C语言）|结果类型|运算方向|
-|----:|----:|----:|
+|:----|:----|:----:|:----:|
 |( expr )|组合运算|同expr结果|N/A|
 |$expr|引用列|String|N/A|
 |++ lvalue|🄲|Numeric|N/A|
