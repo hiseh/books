@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-14 16:22:45
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-15 22:50:19
+ * @LastEditTime: 2020-08-15 22:51:59
  * @Description: 源码
 -->
 
@@ -116,4 +116,4 @@ True
 
 看到这，算是明白Python变量、对象和类型的概念了，但这些东西在内存里实际是什么样的，我们还需要进一步分析。
 
-[下一页>>>](./pyobject2.md)&nbsp;&nbsp;Python对象的本质
+[Python对象的本质 >>>](./pyobject2.md)&nbsp;&nbsp;
