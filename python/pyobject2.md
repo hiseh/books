@@ -2,17 +2,23 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 11:06:24
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-15 23:21:10
+ * @LastEditTime: 2020-08-22 10:44:03
  * @Description: 
 -->
 
 # Python对象的本质
 
+0. [Python对象初探](./pyobject.md)
+0. Python对象的本质
+0. [Python对象生命周期](./pyobject3.md)
+
+====================================================
+
 为了进一步了解Python中对象概念，我们应该看看Python源码，下面我会用`Python 3.7.4`举例子说明，使用`Python 2`的读者请注意，2和3差别还是很大的。
 
 ## Python总体架构
 
-![Python架构](../img/pyobject/arch_1.png)
+![Python架构](../img/pyobject/arch_1.svg)
 
 如图所示，Python总体架构可分为三部分，左边是Python自带的各种模块（Core Modules）、库（Library）以及用户自定义模块（User-defined Modules）。最右边是Python运行时环境，包括对象/类型系统（Object/Type Structures），内存分配器（Memory Allocator）和运行时状态（Current State of Python）。运行时状态维护了解释器在执行字节码时不同状态之间的切换动作，可以简单理解为大个有穷状态机。内存分配器负责创建和销毁对象时内存的分配及回收动作。**对象/类型系统负责管理Python各种对象和类型体系，是本文重点关注部分。**
 <br/>
