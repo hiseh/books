@@ -134,6 +134,33 @@
           </text>
         </g>
       </g>
+      <g id="Line_24">
+        <line x1="509.75" y1="530.5" x2="509.75" y2="540.9906" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_25">
+        <line x1="509.75" y1="589.8906" x2="509.75" y2="600.38125" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_26">
+        <line x1="509.75" y1="649.28125" x2="509.75" y2="659.7719" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_27">
+        <line x1="672.75" y1="557.5157" x2="583.11926" y2="564.5954" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_28">
+        <line x1="575.96726" y1="624.5829" x2="683.86106" y2="576.0605" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_29">
+        <line x1="573.25" y1="624.7962" x2="662.8804" y2="617.75984" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_30">
+        <line x1="574.0899" y1="684.152" x2="704.5453" y2="578.2399" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_31">
+        <line x1="575.9227" y1="684.009" x2="683.8025" y2="635.5561" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_32">
+        <line x1="573.25" y1="684.2175" x2="662.88" y2="677.2244" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
     </g>
   </g>
 </svg>
