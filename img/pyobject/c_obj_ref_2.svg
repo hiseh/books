@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="243 357 458.8732 584.448" width="458.8732" height="584.448">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="PingFang SC" font-size="16" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.13 
+    <dc:date>2020-08-22 07:31:36 +0000</dc:date>
+  </metadata>
+  <g id="Python____" stroke="none" fill="none" fill-opacity="1" stroke-dasharray="none" stroke-opacity="1">
+    <title>Python对象的本质</title>
+    <g id="Python____: 变量/对象/类型拓扑">
+      <title>变量/对象/类型拓扑</title>
+      <g id="Group_51">
+        <g id="Graphic_42">
+          <text transform="translate(248 635.5)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="47606363e-20" y="15">PyFloatObject</tspan>
+          </text>
+        </g>
+        <g id="Group_48">
+          <g id="Graphic_41">
+            <rect x="245.672" y="530" width="106" height="100.5" fill="white"/>
+            <rect x="245.672" y="530" width="106" height="100.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Group_47">
+            <g id="Graphic_44">
+              <rect x="245.672" y="530" width="106" height="33.5" fill="#c0ffff"/>
+              <rect x="245.672" y="530" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(250.672 537.526)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.216" y="15">ob_refcnt</tspan>
+              </text>
+            </g>
+            <g id="Graphic_45">
+              <rect x="245.672" y="563.5" width="106" height="33.5" fill="#c0ffff"/>
+              <rect x="245.672" y="563.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(250.672 571.026)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19.104" y="15">ob_type</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Graphic_46">
+            <rect x="245.672" y="597" width="106" height="33.5" fill="#ffffc0"/>
+            <rect x="245.672" y="597" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(250.672 604.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.856" y="15">ob_fval = 3.4</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="Group_52">
+        <g id="Graphic_59">
+          <text transform="translate(485 635.5)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="47606363e-20" y="15">PyFloatObject</tspan>
+          </text>
+        </g>
+        <g id="Group_53">
+          <g id="Graphic_58">
+            <rect x="482.672" y="530" width="106" height="100.5" fill="white"/>
+            <rect x="482.672" y="530" width="106" height="100.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Group_55">
+            <g id="Graphic_57">
+              <rect x="482.672" y="530" width="106" height="33.5" fill="#c0ffff"/>
+              <rect x="482.672" y="530" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(487.672 537.526)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.216" y="15">ob_refcnt</tspan>
+              </text>
+            </g>
+            <g id="Graphic_56">
+              <rect x="482.672" y="563.5" width="106" height="33.5" fill="#c0ffff"/>
+              <rect x="482.672" y="563.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(487.672 571.026)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19.104" y="15">ob_type</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Graphic_54">
+            <rect x="482.672" y="597" width="106" height="33.5" fill="#ffffc0"/>
+            <rect x="482.672" y="597" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(487.672 604.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.856" y="15">ob_fval = 1.7</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="Group_73">
+        <g id="Graphic_67">
+          <text transform="translate(358.436 918)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">PyFloat_Type</tspan>
+          </text>
+        </g>
+        <g id="Group_72">
+          <g id="Graphic_66">
+            <rect x="353.14" y="712" width="106" height="201" fill="white"/>
+            <rect x="353.14" y="712" width="106" height="201" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Graphic_65">
+            <rect x="353.14" y="712" width="106" height="33.5" fill="#c0ffff"/>
+            <rect x="353.14" y="712" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(358.14 719.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.216" y="15">ob_refcnt</tspan>
+            </text>
+          </g>
+          <g id="Graphic_64">
+            <rect x="353.14" y="745.5" width="106" height="33.5" fill="#c0ffff"/>
+            <rect x="353.14" y="745.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(358.14 753.026)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19.104" y="15">ob_type</tspan>
+            </text>
+          </g>
+          <g id="Graphic_62">
+            <rect x="353.14" y="779" width="106" height="33.5" fill="#ffc0ff"/>
+            <rect x="353.14" y="779" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(358.14 786.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="20.752" y="15">ob_size</tspan>
+            </text>
+          </g>
+          <g id="Group_71">
+            <g id="Graphic_68">
+              <rect x="353.14" y="812.5" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="353.14" y="812.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(358.14 820.026)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.8" y="15">ob_name</tspan>
+              </text>
+            </g>
+            <g id="Graphic_69">
+              <rect x="353.14" y="846" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="353.14" y="846" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(358.14 853.526)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.64" y="15">ob_basicsize</tspan>
+              </text>
+            </g>
+            <g id="Graphic_70">
+              <rect x="353.14" y="879.5" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="353.14" y="879.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(358.14 885.25)" fill="black">
+                <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="32" y="17">……</tspan>
+              </text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Line_74">
+        <path d="M 362 409.53357 C 346.3325 411.70307 330.2497 417.2855 318.5 429.5 C 293.92496 455.0471 297.15504 500.40655 300.01558 520.25006" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_76">
+        <path d="M 468 441.70517 C 481.29944 443.0686 495.0344 446.70545 506.5 454.5 C 532.0438 471.8652 537.58485 503.9258 538.708 520.10725" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_80">
+        <g id="Group_40">
+          <g id="Group_38">
+            <g id="Group_35">
+              <g id="Graphic_33">
+                <rect x="362" y="357.5" width="106" height="105" fill="#ffffc0"/>
+                <rect x="362" y="357.5" width="106" height="105" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              </g>
+              <g id="Graphic_34">
+                <rect x="396.84573" y="358.5" width="36.308533" height="24.891998" fill="#ffffc0"/>
+              </g>
+            </g>
+            <g id="Graphic_36">
+              <rect x="362" y="395.5" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="362" y="395.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(367 403.026)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="43.704" y="15">a</tspan>
+              </text>
+            </g>
+            <g id="Graphic_37">
+              <rect x="362" y="429" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="362" y="429" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(367 436.526)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="43.256" y="15">b</tspan>
+              </text>
+            </g>
+          </g>
+          <g id="Graphic_39">
+            <text transform="translate(399 467.5)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="0" y="17">变量</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_79">
+          <rect x="362" y="357.5" width="106" height="37.5" fill="#ffffc0"/>
+          <rect x="362" y="357.5" width="106" height="37.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(367 367.026)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="32.448" y="15">float</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_82">
+        <path d="M 351.672 575.11094 C 361.7932 577.8105 371.4395 583.53105 378.5742 594.27344 C 398.08686 623.6526 391.5918 679.719 387.942 702.2595" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_83">
+        <path d="M 482.672 568.5723 C 466.67635 569.31314 449.8221 574.7737 436.41797 590.1406 C 411.9696 618.1691 406.6584 670.3731 405.8366 702.0997" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_87">
+        <path d="M 468 379.0329 C 500.9919 378.6423 536.8683 381.0624 571.5 429 C 625.32795 503.5092 635.8221 567.45705 606.5 638 C 577.1779 708.54295 524.763 652.2901 468 678 C 446.94737 687.5355 433.00175 696.9788 423.7873 705.08665" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_88">
+        <g id="Graphic_98">
+          <text transform="translate(553.328 918)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="47606363e-20" y="15">PyType_Type</tspan>
+          </text>
+        </g>
+        <g id="Group_89">
+          <g id="Graphic_97">
+            <rect x="547" y="712" width="106" height="201" fill="white"/>
+            <rect x="547" y="712" width="106" height="201" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Graphic_96">
+            <rect x="547" y="712" width="106" height="33.5" fill="#c0ffff"/>
+            <rect x="547" y="712" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(552 719.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.216" y="15">ob_refcnt</tspan>
+            </text>
+          </g>
+          <g id="Graphic_95">
+            <rect x="547" y="745.5" width="106" height="33.5" fill="#c0ffff"/>
+            <rect x="547" y="745.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(552 753.026)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="19.104" y="15">ob_type</tspan>
+            </text>
+          </g>
+          <g id="Graphic_94">
+            <rect x="547" y="779" width="106" height="33.5" fill="#ffc0ff"/>
+            <rect x="547" y="779" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(552 786.526)" fill="black">
+              <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="20.752" y="15">ob_size</tspan>
+            </text>
+          </g>
+          <g id="Group_90">
+            <g id="Graphic_93">
+              <rect x="547" y="812.5" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="547" y="812.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(552 820.026)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="14.8" y="15">ob_name</tspan>
+              </text>
+            </g>
+            <g id="Graphic_92">
+              <rect x="547" y="846" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="547" y="846" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(552 853.526)" fill="black">
+                <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="1.64" y="15">ob_basicsize</tspan>
+              </text>
+            </g>
+            <g id="Graphic_91">
+              <rect x="547" y="879.5" width="106" height="33.5" fill="#ffffc0"/>
+              <rect x="547" y="879.5" width="106" height="33.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              <text transform="translate(552 885.25)" fill="black">
+                <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="32" y="17">……</tspan>
+              </text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Line_101">
+        <path d="M 459.14 762.7881 C 462.03423 762.297 464.99247 761.7059 468 761 C 502.0986 752.9966 489.10374 743.1366 526.5 734 C 530.0958 733.1215 533.6796 732.3634 537.22056 731.7106" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_102">
+        <path d="M 653 761.1611 C 660.60205 759.27975 668.0286 756.3739 674.5 752 C 702.68885 732.9477 703.7938 720.2355 699.5 695 C 695.20616 669.7645 685.63025 663.8962 659.34375 662.9246 C 633.05725 661.9529 623.5272 672.9216 606.71484 691.5703 C 603.4088 695.2374 601.14336 698.9 599.63706 702.418" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

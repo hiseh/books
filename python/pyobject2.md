@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 11:06:24
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-22 10:44:03
+ * @LastEditTime: 2020-08-22 15:33:17
  * @Description: 
 -->
 
@@ -116,9 +116,9 @@ typedef struct {
 } PyListObject;
 ```
 
-> 这里特别解释一下`int`对象类型，*Python 2*里`int`是定长对象，但到了*Python 3*，则去掉`PyIntObject`对象，改为`PyLongObject`，`PyLongObject`里用一个`ob_digit`数组管理整数，最后整数对象的值是`SUM(for i=0 through abs(ob_size)-1) ob_digit[i] * 2**(SHIFT*i)`，其中`SHIFT`表示每个数字占有的位数。
-> 
-> 为了证明整数是变长对象，可以用代码验证
+> 这里特别解释一下`int`对象类型，*Python 2*里`int`是定长对象（`PyIntObject`），但到了*Python 3*，则去掉`PyIntObject`对象，改为`PyLongObject`，是变长对象。`PyLongObject`里用一个`ob_digit`数组管理整数，最后整数对象的值是`SUM(for i=0 through abs(ob_size)-1) ob_digit[i] * 2**(SHIFT*i)`，其中`SHIFT`表示每个数字占有的位数。
+> <br/>为了证明整数是变长对象，可以用代码验证
+>
 > ```py
 > >>> sys.getsizeof(1000000000)
 > 28
@@ -138,7 +138,7 @@ typedef struct {
 
 从名字就能看出来`PyObject_HEAD_INIT`负责初始化定长对象，它会把引用计数（`ob_refcnt`）设为1（因为Python里`ob_refcnt == 0`就会触发回收机制），同时设定对象的传入类型。`_PyObject_EXTRA_INIT`也是个宏，就是个标记位，在调试时用。
 
-```
+```c
 #define PyVarObject_HEAD_INIT(type, size)       \
     { PyObject_HEAD_INIT(type) size },
 ```
@@ -191,7 +191,7 @@ PyTypeObject PyFloat_Type = {
 
 到这里，我们可以梳理下Python中变量、对象和类型的拓扑关系了：
 
-![基础拓扑](../img/pyobject/c_obj_ref_1.png)
+![基础拓扑](../img/pyobject/c_obj_ref_1.svg)
 
 `a`和`b`都是`PyFloatObject`结构体的实例，在`ob_fval`里保存了对应的数值。*类型对象*是一个`PyTypeObject`结构体，保存了类型名、内存分配信息以及浮点相关操作。类型对象指针`ob_type`指向类型对象，Python据此判断对象类型，进而获悉关于对象的元信息，如操作方法等。
 
@@ -223,7 +223,7 @@ PyTypeObject PyType_Type = {
 
 上面拓扑图里加上`type`类型对象后如下：
 
-![有type的拓扑](../img/pyobject/c_obj_ref_2.png)
+![有type的拓扑](../img/pyobject/c_obj_ref_2.svg)
 
 我们回头再看`PyFloat_Type`实例代码，`tp_base`是**0**？！难道初始化时不需要初始化父类吗？肯定不符合面向对象的约定。需要去编译器代码（*Python/pylifecycle.c*）里看看Python是如何处理的，发现编译器初始化时还调了`_Py_ReadyTypes`函数，这个函数会依次初始化所有内置类型对象，其中初始化`PyFloat_Type`的代码在*Objects/object.c*里:
 
@@ -265,7 +265,7 @@ PyTypeObject PyBaseObject_Type = {
 
 到这里，我们总算弄清了Python中对象和类型的关系，再次完善拓扑图：
 
-![完善的拓扑图](../img/pyobject/c_obj_ref_3.png)
+![完善的拓扑图](../img/pyobject/c_obj_ref_3.svg)
 
 
 现在我们清楚了变量、对象和类型的关系，但Python如何管理对象生命周期呢？还需进一步分析。
