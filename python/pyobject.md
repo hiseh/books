@@ -2,11 +2,15 @@
  * @Author: Hiseh
  * @Date: 2020-08-14 16:22:45
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-15 22:51:59
+ * @LastEditTime: 2020-08-22 09:45:52
  * @Description: 源码
 -->
 
 # Python对象初探
+
+0. Python对象初探
+0. [Python对象的本质](./pyobject2.md)
+0. [Python对象生命周期](./pyobject3.md)
 
 最近几个同事在学python，学习时总弄混python中对象和引用的关系，也不太理解为什么python一切都是对象。网上的资料常流于表面，看完还是一知半解的，因此我结合自己学习的过程，整理了此篇文章，希望能帮助初学者了解python一些基本理念。
 
@@ -38,7 +42,7 @@ True
 
 原来`int`类型是`type`对象，`int`本身继承自`object`。`type`也是个类，它的父类是`object`，`object`也有类型，它的类型是`type`……到此为止，我们知道对象和类型有这么一个关系：
 
-![内置类型关系](../img/pyobject/obj_ref_1.png)
+![内置类型关系](../img/pyobject/obj_ref_1.svg)
 
 `int`是Python内置类型，那么自定义类型又是什么关系呢，依然用代码演示。
 
@@ -116,4 +120,4 @@ True
 
 看到这，算是明白Python变量、对象和类型的概念了，但这些东西在内存里实际是什么样的，我们还需要进一步分析。
 
-[Python对象的本质 >>>](./pyobject2.md)&nbsp;&nbsp;
+[Python对象的本质  >>>](./pyobject2.md)
