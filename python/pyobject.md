@@ -77,7 +77,7 @@ True
 
 原来`type`的类型也是`type`，最终对象和类型的关系应该是：
 
-![最终关系](../img/pyobject/obj_ref_3.png)
+![最终关系](../img/pyobject/obj_ref_3.svg)
 
 ## 变量和对象的关系
 
