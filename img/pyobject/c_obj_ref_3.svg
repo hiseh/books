@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="45.3663 357 656.5069 628.38335" width="656.5069" height="628.38335">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="68.85367 357 633.0195 650.0826" width="633.0195" height="650.0826">
   <defs>
     <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
       <font-face-src>
@@ -19,7 +19,7 @@
     </marker>
   </defs>
   <metadata> Produced by OmniGraffle 7.13 
-    <dc:date>2020-08-22 07:42:34 +0000</dc:date>
+    <dc:date>2020-08-22 07:47:47 +0000</dc:date>
   </metadata>
   <g id="Python____" stroke="none" fill="none" fill-opacity="1" stroke-dasharray="none" stroke-opacity="1">
     <title>Python对象的本质</title>
@@ -340,11 +340,11 @@
       <g id="Line_116">
         <path d="M 353.14 877.1137 C 346.42065 873.5938 339.78733 867.2752 333.7383 856.9414 C 304.40643 806.8329 344.2361 722.1962 302.60547 685.8789 C 276.53898 663.1393 237.71046 685.6835 212.3208 705.7187" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
-      <g id="Line_118">
-        <path d="M 133.792 754.9326 C 117.18988 750.5643 104.13057 743.6979 108.304 733 C 118.2786 707.4317 116.69666 691.54805 222 672 C 291.1265 659.1677 334.5283 652.8072 386.48465 654.4996 C 386.72025 649.0047 397.70805 649.4758 397.47245 654.9707 C 399.83924 655.096 402.2276 655.2373 404.6405 655.3949 C 405.04737 649.90995 416.02186 650.72404 415.615 656.209 C 434.8809 657.80325 455.8811 660.379 480 664 C 490.82267 665.6248 500.68344 667.5826 509.6662 669.78934 C 511.08554 664.4756 521.7138 667.3145 520.2945 672.6282 C 551.97386 681.80446 571.2922 694.12494 582.95485 704.8844" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
-      </g>
       <g id="Line_120">
-        <path d="M 547 862.9688 C 536.3584 865.5232 524.70234 869.8206 512.60547 876.7617 C 465.57684 903.7465 526.81227 934.1349 434 958 C 341.18773 981.8651 291.52268 989.6138 185 961 C 78.47732 932.3862 79.72836 929.8094 58 857 C 36.27164 784.1906 71.81658 740.3339 108.304 704 C 117.5555 694.7874 127.16145 691.8378 136.34732 692.5673 C 137.5743 687.20594 148.26996 689.6537 147.04297 695.0151 C 153.47086 697.4037 159.50428 701.2307 164.8341 705.4648" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path d="M 547 872.5 C 498.27154 905.5759 535.6559 952.0194 428 979.5 C 320.3441 1006.9806 266.44006 1012.8457 167 969.5 C 67.55994 926.1543 87.76559 904.6922 77 826.5 C 66.23441 748.3078 97.89538 721.1931 129 693.5 C 145.85492 678.4937 161.41279 690.1011 172.13015 703.8858" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_122">
+        <path d="M 239.792 723.7575 C 248.8275 726.5819 257.72218 731.9819 265.28 741.4102 C 294.51934 777.8857 261.1822 797.9805 290 857.5 C 318.8178 917.0195 313.17205 936.7681 367 951.5 C 420.82795 966.2319 436.30463 962.3995 480 909.5 C 523.6954 856.6005 487.2378 815.9847 521.2344 764.7773 C 526.97905 756.1244 533.0313 749.3671 539.1232 744.1118" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
   </g>
