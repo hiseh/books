@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-14 16:22:45
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-22 09:45:52
+ * @LastEditTime: 2020-08-22 09:57:03
  * @Description: 源码
 -->
 
@@ -11,6 +11,8 @@
 0. Python对象初探
 0. [Python对象的本质](./pyobject2.md)
 0. [Python对象生命周期](./pyobject3.md)
+
+====================================================
 
 最近几个同事在学python，学习时总弄混python中对象和引用的关系，也不太理解为什么python一切都是对象。网上的资料常流于表面，看完还是一知半解的，因此我结合自己学习的过程，整理了此篇文章，希望能帮助初学者了解python一些基本理念。
 
@@ -64,7 +66,7 @@ True
 
 可以看出自定义类型也是`type`，默认父类是`object`（如果显示继承，父类就是指定的类）。所以完善后的对象和类型关系如下：
 
-![自定义类型关系](../img/pyobject/obj_ref_2.png)
+![自定义类型关系](../img/pyobject/obj_ref_2.svg)
 
 现在我们明白了，所有的类型都继承自`object`，所有类型的类型都是`type`，但`type`的类型又是什么呢？
 
