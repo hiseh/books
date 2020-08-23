@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 11:06:24
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-22 15:33:17
+ * @LastEditTime: 2020-08-22 16:03:56
  * @Description: 
 -->
 
@@ -225,7 +225,7 @@ PyTypeObject PyType_Type = {
 
 ![有type的拓扑](../img/pyobject/c_obj_ref_2.svg)
 
-我们回头再看`PyFloat_Type`实例代码，`tp_base`是**0**？！难道初始化时不需要初始化父类吗？肯定不符合面向对象的约定。需要去编译器代码（*Python/pylifecycle.c*）里看看Python是如何处理的，发现编译器初始化时还调了`_Py_ReadyTypes`函数，这个函数会依次初始化所有内置类型对象，其中初始化`PyFloat_Type`的代码在*Objects/object.c*里:
+我们回头再看`PyFloat_Type`实例代码，`tp_base`是**0**？！难道初始化时不需要初始化父类吗？肯定不符合面向对象的约定。我们需要去编译器里看看Python是如何处理的，发现编译器初始化时（*Python/pylifecycle.c*）还调了`_Py_ReadyTypes`函数，这个函数会依次初始化所有内置类型对象，其中初始化`PyFloat_Type`的代码在*Objects/object.c*里:
 
 ```c
 if (PyType_Ready(&PyFloat_Type) < 0)
@@ -270,4 +270,4 @@ PyTypeObject PyBaseObject_Type = {
 
 现在我们清楚了变量、对象和类型的关系，但Python如何管理对象生命周期呢？还需进一步分析。
 
-~~Python对象生命周期（未完成）~~
+[Python对象生命周期 >>>](./pyobject3.md)

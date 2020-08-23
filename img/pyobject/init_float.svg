@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="154 452.776 632 287.948" width="632" height="287.948">
+  <defs>
+    <font-face font-family="PingFang SC" font-size="16" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 0 M 0 -3 L 8 0 L 0 3" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.13 
+    <dc:date>2020-08-22 13:02:19 +0000</dc:date>
+  </metadata>
+  <g id="Python_____" stroke="none" fill="none" fill-opacity="1" stroke-dasharray="none" stroke-opacity="1">
+    <title>Python对象生命周期</title>
+    <g id="Python_____: 创建float对象">
+      <title>创建float对象</title>
+      <g id="Graphic_2">
+        <rect x="154.5" y="578.5" width="120" height="37" fill="#ffffc0"/>
+        <rect x="154.5" y="578.5" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(159.5 586)" fill="black">
+          <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="17.672" y="17">float(‘1.7’)</tspan>
+        </text>
+      </g>
+      <g id="Group_14">
+        <g id="Group_10">
+          <g id="Graphic_3">
+            <rect x="410" y="471.776" width="120" height="222" fill="white"/>
+            <rect x="410" y="471.776" width="120" height="222" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Graphic_4">
+            <rect x="410" y="471.776" width="120" height="37" fill="#c0ffff"/>
+            <rect x="410" y="471.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 479.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="19.592" y="17">ob_refcnt</tspan>
+            </text>
+          </g>
+          <g id="Graphic_5">
+            <rect x="410" y="508.776" width="120" height="37" fill="#c0ffff"/>
+            <rect x="410" y="508.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 516.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="25.688" y="17">ob_type</tspan>
+            </text>
+          </g>
+          <g id="Graphic_6">
+            <rect x="410" y="545.776" width="120" height="37" fill="#ffc0ff"/>
+            <rect x="410" y="545.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 553.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="27.2" y="17">ob_size</tspan>
+            </text>
+          </g>
+          <g id="Graphic_7">
+            <rect x="410" y="582.776" width="120" height="37" fill="#ffffc0"/>
+            <rect x="410" y="582.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 590.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="23.248" y="17">tp_name</tspan>
+            </text>
+          </g>
+          <g id="Graphic_8">
+            <rect x="410" y="619.776" width="120" height="37" fill="#ffffc0"/>
+            <rect x="410" y="619.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 627.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="25.832" y="17">tp_base</tspan>
+            </text>
+          </g>
+          <g id="Graphic_9">
+            <rect x="410" y="656.776" width="120" height="37" fill="#ffffc0"/>
+            <rect x="410" y="656.776" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+            <text transform="translate(415 664.276)" fill="black">
+              <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="30.864" y="17">tp_call</tspan>
+            </text>
+          </g>
+        </g>
+        <g id="Graphic_13">
+          <text transform="translate(423.328 698.776)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="47606363e-20" y="15">PyType_Type</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Group_27">
+        <g id="Graphic_24">
+          <rect x="665.5" y="453.276" width="120" height="259" fill="white"/>
+          <rect x="665.5" y="453.276" width="120" height="259" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_23">
+          <rect x="665.5" y="453.276" width="120" height="37" fill="#c0ffff"/>
+          <rect x="665.5" y="453.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 460.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="19.592" y="17">ob_refcnt</tspan>
+          </text>
+        </g>
+        <g id="Graphic_22">
+          <rect x="665.5" y="490.276" width="120" height="37" fill="#c0ffff"/>
+          <rect x="665.5" y="490.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 497.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="25.688" y="17">ob_type</tspan>
+          </text>
+        </g>
+        <g id="Graphic_21">
+          <rect x="665.5" y="527.276" width="120" height="37" fill="#ffc0ff"/>
+          <rect x="665.5" y="527.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 534.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="27.2" y="17">ob_size</tspan>
+          </text>
+        </g>
+        <g id="Graphic_20">
+          <rect x="665.5" y="564.276" width="120" height="37" fill="#ffffc0"/>
+          <rect x="665.5" y="564.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 571.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="9.424" y="17">tp_basicsize</tspan>
+          </text>
+        </g>
+        <g id="Graphic_19">
+          <rect x="665.5" y="601.276" width="120" height="37" fill="#ffffc0"/>
+          <rect x="665.5" y="601.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 608.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="25.832" y="17">tp_base</tspan>
+          </text>
+        </g>
+        <g id="Graphic_18">
+          <rect x="665.5" y="638.276" width="120" height="37" fill="#ffffc0"/>
+          <rect x="665.5" y="638.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 645.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="32.064" y="17">tp_init</tspan>
+          </text>
+        </g>
+        <g id="Graphic_16">
+          <text transform="translate(677.796 717.276)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="black" x="0" y="15">PyFloat_Type</tspan>
+          </text>
+        </g>
+        <g id="Graphic_26">
+          <rect x="665.5" y="675.276" width="120" height="37" fill="#ffffc0"/>
+          <rect x="665.5" y="675.276" width="120" height="37" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          <text transform="translate(670.5 682.776)" fill="black">
+            <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="28.52" y="17">tp_new</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Line_50">
+        <path d="M 274.5 597.77434 C 284.1524 599.6859 294.45484 602.6192 305 607 C 352.7369 626.83135 336.25467 647.6571 383 667 C 388.92027 669.4498 394.73643 671.4118 400.3799 672.97024" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_51">
+        <rect x="329.62247" y="613.02404" width="16.416" height="32" fill="white"/>
+        <text transform="translate(334.62247 618.02404)" fill="black">
+          <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="5382361e-19" y="17">1</tspan>
+        </text>
+      </g>
+      <g id="Line_52">
+        <path d="M 530 687.9018 C 558.4973 693.18364 593.3885 698.6387 626 701 C 636.86506 701.7867 646.7102 702.1745 655.59675 702.26535" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_53">
+        <rect x="599.6539" y="683.5676" width="19.6" height="32" fill="white"/>
+        <text transform="translate(604.6539 688.5676)" fill="black">
+          <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="0" y="17">2</tspan>
+        </text>
+      </g>
+      <g id="Line_54">
+        <path d="M 530 676.4061 C 543.47616 676.1226 557.9529 675.4192 572 674 C 620.44516 669.1056 597.5127 662.87965 641 658 C 645.9245 657.4474 650.8172 657.0043 655.62225 656.65294" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_55">
+        <rect x="596.1786" y="651.1066" width="19.6" height="32" fill="white"/>
+        <text transform="translate(601.1786 656.1066)" fill="black">
+          <tspan font-family="PingFang SC" font-size="16" font-weight="400" fill="black" x="0" y="17">3</tspan>
+        </text>
+      </g>
+      <g id="Line_56">
+        <path d="M 530 669.4299 C 537.2427 667.0702 544.94685 663.9919 553 660 C 600.59524 636.4075 589.1299 613.87795 638 592 C 644.15896 589.2428 650.1553 587.03404 655.9321 585.2793" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
