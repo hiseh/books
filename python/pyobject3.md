@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 21:43:19
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-23 11:50:40
+ * @LastEditTime: 2020-08-23 12:07:46
  * @Description: 
 -->
 
@@ -90,7 +90,7 @@ static PyObject *type_call(PyTypeObject *type, PyObject *args, PyObject *kwds) {
 
 0. 首先执行`tp_new`函数，如果没找到，则去`tp_base`指定的父类查找。因为`PyObject`是最终的根，所以总能找到一个可执行的`tp_new`。
 0. 在**类型对象中**查找`tp_basicsize`，进而完成申请内存操作。因为`PyType_Type`是虽有类型对象的根，所有总能找到一个可用的`tp_basicsize`来申请内存。
-0. 执行`tp_init`，完成初始化对象工作。
+0. 如有必要执行`tp_init`，完成初始化对象工作。
 
 所以我们执行`float('1.7')`时，Python实际创建对象过程如下：
 
@@ -169,7 +169,7 @@ AttributeError: 'Test' object has no attribute '__private_func'
 private func
 ```
 
-继承比较简单，通过`tp_base`指针即可实现继承。
+继承比较简单了，通过`tp_base`指针即可实现继承。
 
 ### 多态
 
@@ -281,9 +281,9 @@ int PyObject_Print(PyObject *op, FILE *fp, int flags) {
 }
 ```
 
-`PyObject_Str`函数首先通过`ob_type`指针检查对象的类型，然后调用对应类型的`tp_str`函数，并返回给`PyObject_Print`函数打印。根据不同类型调用对应的字符串格式化方式，同一个函数在不同情况下表现了不同的行为，正式多态化的体现。
+`PyObject_Str`函数首先通过`ob_type`指针检查对象的类型，然后调用对应类型的`tp_str`函数，并返回给`PyObject_Print`函数打印。根据不同类型调用对应的字符串格式化方式，同一个函数在不同情况下表现了不同的行为，正是多态性的体现。
 
-### 自定义Python
+### 扩展Python
 我们用个例子来演示如何扩展Python，例如同样打印函数，我们修改下`Objects/floatobject.c`的`float_repr`函数：
 
 ```c
@@ -316,7 +316,7 @@ Hello Python
 
 通过`ob_type`指针， Python在C语言层面实现了对象的**多态**特性，思路跟C++中的虚表指针有异曲同工之妙。如果需要调试Python内部状态，可以用这个技巧。
 
-## 使用对象
+## 调用对象
 
 当对象被调用时，Python会执行`tp_call`函数函数指针，它会调用`buildin.__import__`，加载真正需要执行的函数。
 
@@ -366,3 +366,5 @@ Hello Python
 ```
 
 这里很好理解，每多一次引用，计数都会加一，减一次引用，计数减一。
+
+好了，到目前为止我们初步了解了Python里对象的基础概念，也知道Python如何创建和回收对象，这些知识能帮我们更好地学习Python，但如想更深入学习，还是要看Python官网文档和源码。其实Python源码虽然多，但构造规范，没有用什么奇技淫巧，注释也很长，其实不难阅读。
