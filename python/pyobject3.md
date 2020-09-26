@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 21:43:19
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-08-23 12:07:46
+ * @LastEditTime: 2020-09-26 10:15:57
  * @Description: 
 -->
 
@@ -30,15 +30,22 @@ PyAPI_FUNC(PyObject *) PyFloat_FromString(PyObject*);
 ```c
 PyObject *PyFloat_FromDouble(double fval) {
     PyFloatObject *op = free_list;
+
+    // 分配内存
     if (op != NULL) {
+        // 优先使用空闲的内存缓冲池
         free_list = (PyFloatObject *)Py_TYPE(op);
         numfree--;
     } else {
+        // 新申请内存
         op = (PyFloatObject *)PyObject_MALLOC(sizeof(PyFloatObject));
         if (!op) return PyErr_NoMemory();
     }
-    /* Inline PyObject_New */
+    
+    // 初始化PyObject，重点是初始化引用计数ob_refcnt
     (void)PyObject_INIT(op, &PyFloat_Type);
+
+    // 初始化变量值
     op->ob_fval = fval;
     return (PyObject *)op;
 }
