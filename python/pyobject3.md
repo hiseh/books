@@ -2,7 +2,7 @@
  * @Author: Hiseh
  * @Date: 2020-08-15 21:43:19
  * @LastEditors: Hiseh
- * @LastEditTime: 2020-09-26 10:15:57
+ * @LastEditTime: 2020-09-26 10:21:00
  * @Description: 
 -->
 
@@ -35,7 +35,7 @@ PyObject *PyFloat_FromDouble(double fval) {
     if (op != NULL) {
         // 优先使用空闲的内存缓冲池
         free_list = (PyFloatObject *)Py_TYPE(op);
-        numfree--;
+        numfree--;   // 空间链表长度-1
     } else {
         // 新申请内存
         op = (PyFloatObject *)PyObject_MALLOC(sizeof(PyFloatObject));
