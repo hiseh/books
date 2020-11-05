@@ -32,7 +32,7 @@ sed "s/client/browser/g" test.txt
 sed "s/client's/my/g" test.txt
 ```
 
-> 来个实际的例子，比如说我们要统计某个目录下的文件类型，可以这么操作：find / -type f | sed 's/.*\\.//' | sort -u
+> 来个实际的例子，比如说我们要统计某个目录下的文件类型，可以这么操作：find ./ -type f | sed 's/.*\\.//' | sort -u
 
 上面的操作仅仅在终端打印了结果，但并没有改变文件内容，如果想保存结果，可以用重定向：
 
